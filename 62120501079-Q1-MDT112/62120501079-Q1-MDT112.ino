@@ -1,7 +1,6 @@
 int count = 0;
 int speed = 100;
-int n = 1;
-int light = 3;
+
 void lightSpeed(int speed);
 void setup(){
     Serial.begin(9600); 
@@ -25,7 +24,8 @@ void setup(){
 }
 
 void loop(){
-     for(light = 3 ; light <= 13 ; light++){
+    lightSpeed(speed);
+    for(light = 3 ; light <= 13 ; light++){
         if(light == 8){
             digitalWrite(light,0);
             continue;
@@ -65,5 +65,5 @@ void loop(){
                 speed = speed / 2;
             }
         } 
-    }  
+    }   
 }
